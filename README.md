@@ -1,8 +1,8 @@
 # ubuntu-tips
-우분투를 사용하면서 느낀 좋은 팁들
+우분투를 사용하면서 느낀 개발 팁들
 
-* Cuda
-* Docker
+* [Cuda] ("cuda")
+* [Docker] ("docker")
 * Git
 * Logrotate
 * Python
