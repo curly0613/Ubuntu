@@ -1,32 +1,29 @@
-# git-tips
-git 사용법
+# logrotate-tips
+logrotate 사용법
 
-### git bash 터미널 계정
-* 현재 계정 확인
-  ```
-  $ git config user.name
-  $ git config user.email
-  ```
+### logrotate
+* Ubuntu 18.04 기준 default installed
 
-* 계정 변경
+* configuration
+  * /etc/logrotate.d/config_name
+  * 예제
   ```
-  $ git config --global user.name <user_id>
-  $ git config --global user.email <user_email_address>
-  ```
-
-* Repository 추가
-  ```
-  $ git clone <git_url>
-  or
-  $ git remote add origin <git_url>
-  ```
-
-* Repository 업로드
-  ```
-  $ git add <file_or_folder>
-  $ git commit -m "COMMIT_MESSAGES"
-  $ git push -u origin master
+  /home/user/path/log/file			// 적용할 log 파일 이름
+  {
+          su root tbai
+          daily					// 일별 log 생성
+          rotate 30
+          missingok
+          notifempty
+          dateext				// 파일명 뒤에 날자 붙임
+          dateyesterday				// 이전 날자로 생성
+          postrotate
+              killall -s SIGUSR1 gunicorn	// gunicorn이랑 함께 쓸 때
+          endscript
+  }
   ```
 
-
-
+* logrotate 실행
+  ```
+  $ sudo logrotate /etc/logrotate.d/config_file
+  ```
