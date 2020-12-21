@@ -7,4 +7,5 @@
 * [Logrotate](logrotate)
 * [Python](python)
 * [Tmux](tmux)
+* [Ubuntu](ubuntu)
 * [Vim](vim)

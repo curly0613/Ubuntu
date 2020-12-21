@@ -66,8 +66,40 @@ python 사용법
   ```
 
 ### flask
+* Install
+  ```
+  $ pip install flask
+  ```
+
+  * flask restful
+  ```
+  $ pip install flask flask-restful
+  ```
+
+  * flask monitoring dashboard
+  ```
+  $ pip install flask-monitoringdashboard
+  ```
 
 
 ### gunicorn
+* Install
+  ```
+  $ pip install gunicorn
+  ```
 
-
+* Run
+  * 최적의 WORKER 수 : (2 x *$NUM_OF_CORES*) + 1
+  ```
+  $ gunicorn <FLASK_CODE_NAME>:app -w <NUM_OF_WORKERS> -k gevent -b 0.0.0.0:<PORT_NUM> --log-file <LOG_FILE> --log-level INFO --reload
+  ```
+  * Log setting
+  ```
+  import logging
+  ...
+  gunicorn_error_logger = logging.getLogger('gunicorn.error')
+  app.logger.handlers = gunicorn_error_logger.handlers
+  app.logger.setLevel(logging.INFO)
+  ...
+  app.logger.info("LOG_MESSAGE)
+  ```

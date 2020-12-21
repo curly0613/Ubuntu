@@ -14,25 +14,6 @@ ubuntu 사용법 (18.04 기준)
   $ sed -i 's/archive.ubuntu.com/kr.archive.ubuntu.com/g' /etc/apt/sources.list
   ```
 
-
-### Pyhton
-* Python 3.6 설치
-  ```
-  $ apt install python3.6-dev
-  ```
-
-* Python 3.6 default 설정
-  ```
-  $ update-alternatives --install /usr/bin/python python /usr/bin/python3.6 1
-  ```
-
-* pip install for version 3.6 (꼭! default 설정 후)
-  ```
-  $ wget https://bootstrap.pypa.io/get-pip.py
-  $ python get-pip.py
-  ```
-
-
 ### 한글
 * 초기 설정
   ```
@@ -50,8 +31,6 @@ ubuntu 사용법 (18.04 기준)
   $ update-locale LANG=ko_KR.UTF-8
   $ dpkg-reconfigure locales
   ```
-
-
 ### Disk mount
 * format disk
   * disk 이름은 'df -h' 또는 'fdisk'로 확인 가능
@@ -64,3 +43,19 @@ ubuntu 사용법 (18.04 기준)
   $ mount /dev/xvdb /1T
   ```
 
+### Find
+  * 파일명으로 찾기
+  ```
+  $ find <dir> -name "<file_name>"
+
+  ex) 현재 디렉토리 내에서 python 확장자를 갖는 파일 찾기
+  $ find . -name "\*.py"
+  ```
+
+  * 파일 내 텍스트로 찾기
+  ```
+  $ grep "text" <file_name>
+
+  ex) 현재 디렉토리 내에서 python 이라는 텍스트가 포함된 내용 찾기
+  $ grep -r "python" *
+  ```
