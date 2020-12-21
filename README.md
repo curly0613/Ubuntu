@@ -3,8 +3,8 @@
 
 * [Cuda](cuda)
 * [Docker](docker)
-* Git
-* Logrotate
-* Python
-* Tmux
-* Vim
+* [Git](git)
+* [Logrotate](logrotate)
+* [Python](python)
+* [Tmux](tmux)
+* [Vim](vim)
