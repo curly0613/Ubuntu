@@ -1,6 +1,14 @@
 # ubuntu-tips
 ubuntu 사용법 (18.04 기준)
 
+### CPU 정보 확인
+```
+$ cat /proc/cpuinfo
+
+// CPU 전체 코어 수 확인
+$ grep -c processor /proc/cpuinfo
+```
+
 ### Update
 * Repository 추가
   ```
@@ -31,6 +39,7 @@ ubuntu 사용법 (18.04 기준)
   $ update-locale LANG=ko_KR.UTF-8
   $ dpkg-reconfigure locales
   ```
+
 ### Disk mount
 * format disk
   * disk 이름은 'df -h' 또는 'fdisk'로 확인 가능
