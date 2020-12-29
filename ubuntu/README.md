@@ -1,7 +1,20 @@
 # ubuntu-tips
 ubuntu 사용법 (18.04 기준)
 
-### CPU 정보 확인
+### 바로가기
+[CPU 정보 확인](#cpu)
+
+[업데이트](#update)
+
+[한글](#korean)
+
+[마운트](#mount)
+
+[검색](#find)
+
+[쉘스크립트]($#sh)
+
+### <a name="cpu">CPU 정보 확인</a>
 ```
 $ cat /proc/cpuinfo
 
@@ -9,7 +22,7 @@ $ cat /proc/cpuinfo
 $ grep -c processor /proc/cpuinfo
 ```
 
-### Update
+### <a name="update">Update</a>
 * Repository 추가
   ```
   $ apt install software-properties-common
@@ -22,7 +35,7 @@ $ grep -c processor /proc/cpuinfo
   $ sed -i 's/archive.ubuntu.com/kr.archive.ubuntu.com/g' /etc/apt/sources.list
   ```
 
-### 한글
+### <a name="korean">한글</a>
 * 초기 설정
   ```
   $ apt install locales
@@ -40,7 +53,7 @@ $ grep -c processor /proc/cpuinfo
   $ dpkg-reconfigure locales
   ```
 
-### Disk mount
+### <a name="mount">Disk mount</a>
 * format disk
   * disk 이름은 'df -h' 또는 'fdisk'로 확인 가능
   ```
@@ -52,7 +65,7 @@ $ grep -c processor /proc/cpuinfo
   $ mount /dev/xvdb /1T
   ```
 
-### Find
+### <a name="find">검색</a>
   * 파일명으로 찾기
   ```
   $ find <dir> -name "<file_name>"
@@ -67,4 +80,15 @@ $ grep -c processor /proc/cpuinfo
 
   ex) 현재 디렉토리 내에서 python 이라는 텍스트가 포함된 내용 찾기
   $ grep -r "python" *
+  ```
+
+### <a name="sh">Shell Script</a>
+  - loop 문
+  ```
+  #!/bin/bash
+  SET=$(seq 시작값 이동값 최종값)
+  for i in $SET
+  do
+    # using command with "$i"
+  done
   ```
