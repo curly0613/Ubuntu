@@ -45,43 +45,44 @@ mongoDB 사용법
     ```
  
   * 조회
-  ```
-  database
-  > show dbs
+    ```
+    database
+    > show dbs
 
-  collection (database 선택 후에)
-  > show collections
-  ```
+    collection (database 선택 후에)
+    > show collections
+    ```
 
   * 생성
-  ```
-  > db.col.insert({ ... })  
-  ```
+    ```
+    > db.col.insert({ ... })  
+    ```
 
   * 삭제
-  ```
-  database
-  > db.dropDatabase()
+    ```
+    - database
+    > db.dropDatabase()
   
-  collection
-  > db.col.drop()
+    - collection
+    > db.col.drop()
 
-  document
-  > db.col.delete({ ... })
-  ```
+    - document
+    > db.col.delete({ ... })
+    ```
+
   * 인덱스
-  ```
-  - 생성
-    key는 인덱스 적용할 key 이름
-    뒤 숫자 1은 오름차순 (-1은 내림차순)
-  > db.col.createIndex({'key':1})
+    ```
+    - 생성
+      key는 인덱스 적용할 key 이름
+      뒤 숫자 1은 오름차순 (-1은 내림차순)
+    > db.col.createIndex({'key':1})
 
-  - 확인
-  > db.col.getIndexes()
+    - 확인
+    > db.col.getIndexes()
 
-  - 삭제
-  > db.col.dropIndexes()
-  ```
+    - 삭제
+    > db.col.dropIndexes()
+    ```
 
 ### <a name="pymongo">pymongo</a>
 * python에서 사용하는 mongoDB library
