@@ -1,7 +1,11 @@
 # mongoDB-tips
 mongoDB 사용법
 
-### mongoDB
+### 바로가기
+* [mongoDB](#mongo)
+* [pymongo](#pymongo)
+
+### <a name="mongo">mongoDB</a>
 * 설치
   ```
   sudo apt-get install mongodb
@@ -22,8 +26,8 @@ mongoDB 사용법
     ```
   
   * 인증
-    - 설정
     ```
+    - 설정
     /etc/mongodb.conf
     --------------------------
     line 22
@@ -33,19 +37,16 @@ mongoDB 사용법
 
     저장 후 재시작
     $ sudo systemctl restart mongodb.service
-    ```
+
     - 사용자 추가
-    ```
     $ mongo 
     > use db_name
     > db.creatUser({user: 'ID', pwd: 'PASSWORD', roles: [{role: 'userAdminAnyDatabase', db : 'DB_NAME'}, {role : 'root', db : 'admin'}]})
-    ```
+
     - 권한 추가
-    ```
     > db.grantRolesToUser('ID', [{role:'readWrite', 'db':'DB_NAME'}])
-    ```
+
     - 계정 권한 접속
-    ```
     $ mongo -u ID -p PASSWORD --authenticationDatabase admin
     ```
  
@@ -75,20 +76,20 @@ mongoDB 사용법
   > db.col.delete({ ... })
   ```
   * 인덱스
-    - key는 인덱스 적용할 key 이름
-    - 뒤 숫자 1은 오름차순 (-1은 내림차순)
     ```
-    생성
+    - 생성
+      key는 인덱스 적용할 key 이름
+      뒤 숫자 1은 오름차순 (-1은 내림차순)
     > db.col.createIndex({'key':1})
 
-    확인
+    - 확인
     > db.col.getIndexes()
 
-    삭제
+    - 삭제
     > db.col.dropIndexes()
     ```
 
-### pymongo
+### <a name="pymongo">pymongo</a>
 * python에서 사용하는 mongoDB library
 
 * 설치
