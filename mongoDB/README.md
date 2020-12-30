@@ -94,12 +94,12 @@ mongoDB 사용법
 
 * 사용법
   - 수정
-  ```
-  col.find_one_and_update({'key_1': value_1 }, {'$set' : {'key_2': new_value_2}})
+    ```
+    col.find_one_and_update({'key_1': value_1 }, {'$set' : {'key_2': new_value_2}})
 
-  # list append
-  col.find_one_and_update({'key_1': value_1 }, {'$push' : {'key_2': new_value_2}})
+    # list append
+    col.find_one_and_update({'key_1': value_1 }, {'$push' : {'key_2': new_value_2}})
 
-  # extend
-  col.find_one_and_update({'key_1': value_1 }, {'$push' : {'key_2': {'$each': new_list}}})
-  ```
+    # extend
+    col.find_one_and_update({'key_1': value_1 }, {'$push' : {'key_2': {'$each': new_list}}})
+    ```
