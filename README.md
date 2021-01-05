@@ -10,3 +10,4 @@
 * [Tmux](tmux)
 * [Ubuntu](ubuntu)
 * [Vim](vim)
+* [VScode](vscode)
