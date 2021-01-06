@@ -105,6 +105,9 @@ Docker 사용법
 
   // Run Background
   $ docker run -i -d ...
+
+  // 이름 설정
+  $ docker run -it --name <name_of_container> ...
   ```
 
 * Docker copy with container
