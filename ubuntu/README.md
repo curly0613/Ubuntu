@@ -3,15 +3,11 @@ ubuntu 사용법 (18.04 기준)
 
 ### 바로가기
 [CPU 정보 확인](#cpu)
-
+[MEM 사용량 확인](#mem)
 [업데이트](#update)
-
 [한글](#korean)
-
 [마운트](#mount)
-
 [검색](#find)
-
 [쉘스크립트](#sh)
 
 ### <a name="cpu">CPU 정보 확인</a>
@@ -20,6 +16,11 @@ $ cat /proc/cpuinfo
 
 // CPU 전체 코어 수 확인
 $ grep -c processor /proc/cpuinfo
+```
+
+### <a name="mem">특정 프로세스 메모리 사용량 확인</a>
+```
+$ ps -eo pid,rsz,vsz,cmd | grep mongo | grep -v grep
 ```
 
 ### <a name="update">Update</a>
