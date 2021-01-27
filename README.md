@@ -11,3 +11,7 @@
 * [Ubuntu](ubuntu)
 * [Vim](vim)
 * [VScode](vscode)
+
+### 개발자가 읽으면 좋은 칼럼
+* 개발자의 평생공부 https://zdnet.co.kr/view/?no=20170616090644
+* 프로그래머의 길 멘토에게 묻다 (교재)

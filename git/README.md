@@ -26,6 +26,9 @@ git 사용법
   $ git add <file_or_folder>
   $ git commit -m "COMMIT_MESSAGES"
   $ git push -u origin master
+
+  // 충돌 발생 시 강제 업로드
+  $ git push -u origin +master
   ```
 
 

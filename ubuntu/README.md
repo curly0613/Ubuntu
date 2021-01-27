@@ -2,13 +2,13 @@
 ubuntu 사용법 (18.04 기준)
 
 ### 바로가기
-[CPU 정보 확인](#cpu)
-[MEM 사용량 확인](#mem)
-[업데이트](#update)
-[한글](#korean)
-[마운트](#mount)
-[검색](#find)
-[쉘스크립트](#sh)
+* [CPU 정보 확인](#cpu)
+* [MEM 사용량 확인](#mem)
+* [업데이트](#update)
+* [한글](#korean)
+* [마운트](#mount)
+* [검색](#find)
+* [쉘스크립트](#sh)
 
 ### <a name="cpu">CPU 정보 확인</a>
 ```

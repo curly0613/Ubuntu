@@ -12,6 +12,7 @@ cuda 사용법
   * CUDA
     - [다운로드](https://developer.nvidia.com/cuda-toolkit-archive)
     ```
+    // 9.0 기준
     $ sudo chmod +x cuda_9.0.176_384.81_linux.run
     $ ./cuda_9.0.176_384.81_linux.run --override
 
