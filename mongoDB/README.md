@@ -93,13 +93,29 @@ mongoDB 사용법
   ```
 
 * 사용법
+  - package load & database connect
+    ```
+    from pymongo import MongoClient 
+    
+    client = MongoClient()
+    db = db.test.test
+    ```
   - 수정
     ```
-    col.find_one_and_update({'key_1': value_1 }, {'$set' : {'key_2': new_value_2}})
+    db.find_one_and_update({'key_1': value_1 }, {'$set' : {'key_2': new_value_2}})
 
     # list append
-    col.find_one_and_update({'key_1': value_1 }, {'$push' : {'key_2': new_value_2}})
+    db.find_one_and_update({'key_1': value_1 }, {'$push' : {'key_2': new_value_2}})
 
     # extend
-    col.find_one_and_update({'key_1': value_1 }, {'$push' : {'key_2': {'$each': new_list}}})
+    db.find_one_and_update({'key_1': value_1 }, {'$push' : {'key_2': {'$each': new_list}}})
+
+    # list delete
+    db.find_one_and_update({'key_1': value_1 }, {'$pull' : {'key_2': value_2}})
+
+    # list delete 여러개
+    db.find_one_and_update({'key_1': value_1 }, {'$pull' : {'key_2': {'$in' : [value_2, value_3]}})
+
+    # inner list delete (multi : 하나만 삭제하지 않고 모두 삭제)
+    db.find_one_and_update({'key_1': value_1 }, {'$pull' : {'key_2.$[].key_3': value_2}}, multi=True)
     ```
