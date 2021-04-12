@@ -5,7 +5,7 @@ python 사용법
 * Install
   * default installed (ubuntu 18.04 기준)
   ```
-  sudo apt-get install python-dev (2.7)
+  $ sudo apt-get install python-dev (2.7)
   ```
 
   * 3.6 install
@@ -26,7 +26,7 @@ python 사용법
 * Python 가상 라이브러리 환경
 * Install
   ```
-  sudo apt-get install virtualenv
+  $ sudo apt-get install virtualenv
   ```
 
 * Build
@@ -46,9 +46,37 @@ python 사용법
   $ deactivate
   ```
 
+### import packages from files
+* libs 폴더 참조
+```
+import sys
+sys.path.append('./libs')
+
+import 'PACKAGE_NAME'
+```
+
+* libs 폴더에 library 설치
+```
+$ pip install --system -r requirements.txt -t ./libs/
+```
+
 ### args
-* command arguments
-  * In code
+* 비교적 간단한 방법
+  * code
+  ```
+  import sys
+
+  args1 = sys.argv[1]
+  args2 = sys.argv[2]
+  ```
+  
+  * Run with arguments (only string)
+  ```
+  $ python test.py A B
+  ```
+
+* use argparse
+  * code
   ```
   import argparse
 
@@ -56,7 +84,9 @@ python 사용법
   parser.add_argument('-args1', type=str, default='A')
   parser.add_argument('-args2', type=int, default=1)
   args = parser.parse_args()
+  
   ...
+  
   # call 'args.args1', 'args.args2'
   ```
 
@@ -81,7 +111,6 @@ python 사용법
   $ pip install flask-monitoringdashboard
   ```
 
-
 ### gunicorn
 * Install
   ```
@@ -96,10 +125,14 @@ python 사용법
   * Log setting
   ```
   import logging
+  
   ...
+  
   gunicorn_error_logger = logging.getLogger('gunicorn.error')
   app.logger.handlers = gunicorn_error_logger.handlers
   app.logger.setLevel(logging.INFO)
+  
   ...
+  
   app.logger.info("LOG_MESSAGE)
   ```

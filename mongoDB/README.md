@@ -113,9 +113,15 @@ mongoDB 사용법
     # list delete
     db.find_one_and_update({'key_1': value_1 }, {'$pull' : {'key_2': value_2}})
 
-    # list delete 여러개
+    # list delete 여러개 contion
     db.find_one_and_update({'key_1': value_1 }, {'$pull' : {'key_2': {'$in' : [value_2, value_3]}})
 
-    # inner list delete (multi : 하나만 삭제하지 않고 모두 삭제)
+    # one(0) of inner list delete
+    db.find_one_and_update({'key_1': value_1 }, {'$pull' : {'key_2.0.key_3': value_2}})
+
+    # all of inner list delete (multi : 하나만 삭제하지 않고 모두 삭제)
     db.find_one_and_update({'key_1': value_1 }, {'$pull' : {'key_2.$[].key_3': value_2}}, multi=True)
+
+    # 여러 조건을 동시에 적용 가능
+    db.find_one_and_update({'key':value}, {'$push':{'key_2':value_2}}, {'$set':{'key_3':value_3})
     ```
