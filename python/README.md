@@ -98,13 +98,61 @@ $ pip install --system -r requirements.txt -t ./libs/
 ### flask
 * Install
   ```
-  $ pip install flask
+  $ pip install flask flask-socketio
   ```
+  * usage
+    * 주로 웹페이지 구현에 활용
+    ```
+    # app.py
+    from flask import Flask, render_template, request
+    from flask_socketio import SocketIO, send
+
+    app = Flask(__name__)
+    app.secret_key = "mysecretkey"
+
+    socket_io = SocketIO(app)
+
+    @app.route('/')
+    def root():
+      return render_template('demo_home.html', host_url=request.host_url)
+    
+    @socket_io.on("message")
+    def reply(message):
+      to_client = { 'input' : message }
+      send(to_client)
+
+    if __name__ == '__main__':
+      socket_io.run(app, debug=True, host='IP_ADDRESS', port=PORT)
+    ```
 
   * flask restful
-  ```
-  $ pip install flask flask-restful
-  ```
+    * REST API 용
+    * install
+      ```
+      $ pip install flask flask-restful
+      ```
+    * usage
+      ```
+      from flask import Flask, request
+      from flask_restful import Resource, Api
+    
+      app = Flask(__name__)
+      api = Api(app)
+
+      class WELCOME(Resource) :
+      '''
+      Welcome and return HELLO WORLD!
+      '''
+
+      def post(self) :
+          input_json = request.json.copy()
+          return { 'input' : input_json, 'output' : 'HELLO, WORLD!!' }
+
+      api.add_resource(WELCOME, '/welcome')
+
+      if __name__ == '__main__':
+        app.run(host='IP_ADDRESS', port=PORT, debug=True, use_reloader=True)
+      ```
 
   * flask monitoring dashboard
   ```
