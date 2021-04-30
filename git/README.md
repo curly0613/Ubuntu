@@ -31,5 +31,5 @@ git 사용법
   $ git push -u origin +master
   ```
 
-
-
+* README 이미지 업로드
+  * 이미지 드래그 앤 드랍

@@ -3,6 +3,7 @@ mongoDB 사용법
 
 ### 바로가기
 * [mongoDB](#mongo)
+* [monitoring](#monitor)
 * [pymongo](#pymongo)
 
 ### <a name="mongo">mongoDB</a>
@@ -83,6 +84,39 @@ mongoDB 사용법
     - 삭제
     > db.col.dropIndexes()
     ```
+
+### <a name="monitor">Monitoring</a>
+* MongoDB monitoring
+
+* link : https://github.com/mrvautin/adminMongo.git
+
+* 설치
+  ```
+  $ sudo apt-get install nodejs-dev node-gyp libssl1.0-dev npm
+  $ git clone https://github.com/mrvautin/adminMongo.git
+  $ cd adminMongo
+  $ npm install
+  ```
+* 서버 시작
+  ```
+  $ npm start
+  ```
+
+* configure
+  * adminMongo/config/app.json
+  ```
+  {
+    "app": {
+      "host": "IP_ADDRESS",
+      "port": PORT
+    }
+  }
+  ```
+
+* connection string
+  ```
+  mongodb://(ID:PASSWORD@)IP_ADDRESS:PORT/DATABASE(?authSource=admin)
+  ```
 
 ### <a name="pymongo">pymongo</a>
 * python에서 사용하는 mongoDB library
