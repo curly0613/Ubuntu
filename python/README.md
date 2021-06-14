@@ -20,6 +20,9 @@ python 사용법
   ```
   $ wget https://bootstrap.pypa.io/get-pip.py
   $ python get-pip.py
+  
+  만약 에러 있으면,
+  $ sudo apt-get install python-distutils
   ```
 
 ### virtualenv
