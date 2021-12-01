@@ -21,7 +21,7 @@ Anaconda 사용법
   $ conda create --name "env_name" python="version, ex) 3.6"
   ```
   
-* remove
+  * remove
   ```
   $ conda env remove --name "env_name"
   ```
@@ -46,3 +46,12 @@ Anaconda 사용법
   $ conda env list
   ```
   
+  * save
+  ```
+  $ conda env export > "file_name.yaml"
+  ```
+
+  * load
+  ```
+  $ conda env create -f "file_name.yaml"
+  ```
