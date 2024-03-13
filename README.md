@@ -4,6 +4,7 @@
 * [Anaconda](anaconda)
 * [Cuda](cuda)
 * [Docker](docker)
+* [K8S](k8s)
 * [Git](git)
 * [Google](google)
 * [Logrotate](logrotate)
