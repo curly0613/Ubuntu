@@ -93,3 +93,8 @@
     - 해결 : wiki-js image 안의 config.yml의 db host 설정 변경(db > 127.0.01 => localhost)
   - DB query 실패
     - 해결 : postgreql container image 초기화 (캐시 이미지 활용 x)
+- System reboot 후 확인사항
+  - nvidia driver(버전 확인), cuda, docker, nvidia-docker 설치 확인
+  - 방화벽 확인(ufw)
+  - Iptable 확인
+  - 특정 pod에 문제가 있는 경우 대부분 할당 노드 변경으로 인한 storage 문제가 대부분(localpath 활용 시)
