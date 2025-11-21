@@ -9,6 +9,7 @@ ubuntu 사용법 (18.04 기준)
 * [마운트](#mount)
 * [검색](#find)
 * [쉘스크립트](#sh)
+* [gui freeze](#freeze)
 
 ### <a name="cpu">CPU 정보 확인</a>
 ```
@@ -92,4 +93,9 @@ $ ps -eo pid,rsz,vsz,cmd | grep mongo | grep -v grep
   do
     # using command with "$i"
   done
+  ```
+
+### <a name="freeze">GUI 멈춤 현상</a>
+  ```
+  $ killall -3 gnome-shell
   ```
